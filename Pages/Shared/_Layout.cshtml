@@ -10,26 +10,25 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">congress_sucks</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                    <partial name="_LoginPartial" />
-                </div>
+    <div class="container" style="padding-right:25px">
+        <nav>
+            <div style="float:left">
+                <ul class="main-nav">
+                    <li><a href="http://congresssucks.us">Home</a></li>
+                    <li><a href="http://constitutionus.com/" target="_blank">The Constitution</a></li>
+                    <li><a href="#latest">Latest Articles</a></li>
+                    <li><a href="#">Article Categories</a></li>
+                    <li><a href="#">Resources</a></li>
+                </ul>
             </div>
         </nav>
+    </div>
+    @if (ViewBag.View == null)
+    {
+        <div class="hero-text-box" style=" overflow:auto">
+            <h1 style=" ">Making the truth of the Constitution plain</h1>
+        </div>
+    }
     </header>
     <div class="container">
         <main role="main" class="pb-3">
@@ -37,14 +36,11 @@
         </main>
     </div>
 
-    
-@{await Html.RenderPartialAsync("_footer");}
-
-@*    <footer class="border-top footer text-muted">
+    <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2023 - congress_sucks - <a asp-area="" asp-page="/Privacy">Privacy</a>
+            &copy; 2023 - Congresssucks.com - <a asp-area="" asp-page="/Privacy">Privacy</a>
         </div>
-    </footer>*@
+    </footer>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
