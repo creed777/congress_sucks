@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using congress_sucks.Data.Models;
 
 namespace congress_sucks.Data
 {
@@ -9,5 +10,8 @@ namespace congress_sucks.Data
             : base(options)
         {
         }
+
+        public DbSet<BlogPost> BlogPost { get; set; } = default!;
+
     }
 }

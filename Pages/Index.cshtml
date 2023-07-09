@@ -1,11 +1,59 @@
 ﻿@page
+@using congress_sucks.Data.Models;
+
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+    <section class="section-blog js-section-blog" id="latest">
+        <div class="row">
+            <h2>Most Recent Posts</h2>
+        </div>
+        <div class="row">
+            @foreach (var post in Model.BlogPosts)
+            {
+                <div class="col span-1-of-4 box">
+                    <div class="blog-box">
+                        <h3>@post.Title </h3>
+                        <div class="blog-date">@post.Updated.ToShortDateString()</div>
+                        <p>
+                             @string.Concat(post.Post.Substring(1,300)," ...")
+                        </p>
+                        <div class="btn-blog-section">
+                            <a href="/Home/Article/@post.Id" class="btn btn-blog">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+
+    </section>
+    <section>
+        <div class="row">
+            <div class="col span-2-of-2 box">
+                <h2>Why <i>Congress Sucks!?</i></h2>
+                <p>
+                    The title of this site is inteded to be tongue-in-cheek.  If you don't get it, or you don't think it's funny, you should  probably leave now!  I think Congress Sucks! because they have abandonded thier sworn duty.  The oath of office for members of Congress begins:
+                </p>
+                <blockquote>
+                    <p>
+                        "I do solemnly swear (or affirm) that I will support and defend the Constitution of the United States against all enemies, foreign and domestic; that I will bear true faith and allegiance to the same..."
+                    </p>
+                </blockquote>
+                <p>
+                    I believe the majority of actions taken by any given Congress are not constitutional and thus violate thier oath to "support and defend".
+                    I am not a lawyer, I am not a politician and I don't consider myself a constitutional expert.  I am just an ordinary citizen who reads the Constitution and doesn't understand how it could be difficult to interpret.  The goal of this site is to offer an ordinary citizen's perspective on recent events and questions in light of a plain reading of the Constitution of the United States.
+                </p>
+            </div>
+        </div>
+
+    </section>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="~/Scripts/respond/src/respond.js"></script>
+    <script src="~/Scripts/html5shiv/src/html5shiv.js"></script>
+    <script src="~/Scripts/selectivizr/selectivizr.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.5/waypoints.min.js"></script>
+    <script src="~/Scripts/script.js"></script>
 

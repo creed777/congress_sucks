@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using congress_sucks.Data.Models;
+using congress_sucks.Domains;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace congress_sucks.Pages
@@ -6,15 +7,19 @@ namespace congress_sucks.Pages
     public class IndexModel : PageModel
     {
         private readonly ILogger<IndexModel> _logger;
+        private IPostDomain PostDomain { get; set; }
 
-        public IndexModel(ILogger<IndexModel> logger)
+        public List<BlogPost> BlogPosts { get; set; } = new ();
+
+        public IndexModel(ILogger<IndexModel> logger, IPostDomain postDomain )
         {
+            PostDomain = postDomain;
             _logger = logger;
         }
 
-        public void OnGet()
+        public async Task OnGetAsync()
         {
-
+            BlogPosts = await PostDomain.GetGetNewestPostsAsync().ConfigureAwait(false);
         }
     }
 }
