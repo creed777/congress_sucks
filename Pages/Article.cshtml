@@ -21,6 +21,7 @@
         <div class="row">
             <div class="col span-2-of-2">
                 <div id="Article" runat="server" class="article-text-box">
+                <span><b>@Model.BlogPost.Title</b><br/><br/></span>
                 @Html.Raw(Model.BlogPost.Post)
                 </div>  
             </div>
