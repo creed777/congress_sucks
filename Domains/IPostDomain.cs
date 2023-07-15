@@ -5,5 +5,6 @@ namespace congress_sucks.Domains
     public interface IPostDomain
     {
         Task<List<BlogPost>> GetGetNewestPostsAsync();
+        Task<BlogPost> GetBlogPostAsync(int postId);
     }
 }

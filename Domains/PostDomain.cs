@@ -16,5 +16,10 @@ namespace congress_sucks.Domains
         {
             return await Repository.GetNewestPostsAsync();
         }
+
+        public async Task<BlogPost> GetBlogPostAsync(int postId)
+        {
+            return await Repository.GetBlogPostAsync(postId);
+        }
     }
 }

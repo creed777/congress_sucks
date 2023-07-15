@@ -1,0 +1,39 @@
+﻿@page "{postId}"
+@using congress_sucks.Data.Models;
+@model ArticleModel
+@{
+    ViewBag.View = "article";
+}
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="~/Content/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/grid.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/style.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/queries.css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400" rel="stylesheet">
+    <meta charset="utf-8" />
+    <title>Congress Sucks!</title>
+</head>
+<body>
+    <section class="section-article js-section-blog">
+        <div class="row">
+            <div class="col span-2-of-2">
+                <div id="Article" runat="server" class="article-text-box">
+                @Html.Raw(Model.BlogPost.Post)
+                </div>  
+            </div>
+        </div>
+    </section>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="vendors/js/respond/src/respond.js"></script>
+    <script src="vendors/js/html5shiv/src/html5shiv.js"></script>
+    <script src="vendors/js/selectivizr/selectivizr.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.5/waypoints.min.js"></script>
+    <script src="Resources/js/script.js"></script>
+
+</body>
+</html>
+
