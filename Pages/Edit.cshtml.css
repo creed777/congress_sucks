@@ -1,0 +1,15 @@
+﻿.edit-span{
+    display:flex;
+    margin-bottom: 20px;
+}
+
+.edit-input{
+    width:500px;
+}
+.edit-label{
+    margin-right: 10px;
+}
+
+.edit-save{
+    margin-top: 20px;
+}

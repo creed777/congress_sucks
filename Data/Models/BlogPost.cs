@@ -6,9 +6,9 @@ namespace congress_sucks.Data.Models
     {
         public int Id { get; set; }
         [Required]
-        public string Title { get; set; } = String.Empty;
+        public string Title { get; set; } = string.Empty;
         [Required]
-        public string Post { get; set; } = String.Empty ;
+        public string Post { get; set; } = string.Empty ;
         [Required]
         public string Tags { get; set; } = string.Empty;
         [Required]

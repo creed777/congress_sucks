@@ -8,7 +8,6 @@ namespace congress_sucks.Repositories
     {
         private ApplicationDbContext Context { get; set; }
 
-
         public PostRepository(ApplicationDbContext context)
         {
             Context = context;
@@ -33,6 +32,17 @@ namespace congress_sucks.Repositories
                 .ConfigureAwait(false);
 
             return result ?? new();
+        }
+
+        public async Task<bool> CreateBlogPostAsync(BlogPost post)
+        {
+            await Context.BlogPost.AddAsync(post).ConfigureAwait(false);
+            var result = await Context.SaveChangesAsync();
+
+            if (result > 0)
+                return true;
+            else
+                return false;
         }
     }
 }

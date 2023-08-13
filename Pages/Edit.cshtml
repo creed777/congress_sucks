@@ -1,0 +1,41 @@
+﻿@page
+@model congress_sucks.Pages.EditModel
+@{
+    ViewBag.View = "Edit";
+}
+
+<head>
+    <script src="https://cdn.tiny.cloud/1/0d239f0gx2ngtenotth5y9wll0eh3oyn8i45atr1gyy471tt/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+</head>
+<body>
+    <section class="section-article js-section-blog">
+        <div class="row">
+            <div class="col span-2-of-2">
+                <form method="post">
+                    <div id="Article" runat="server" class="article-text-box">
+                        <span class="edit-span">
+                            <label for="txtTitle" class="edit-label">Title: </label>
+                            <input name="Title" type="text" id="txtTitle" class="edit-input" />
+                        </span>
+                        <span class="edit-span">
+                            <label for="txtTag" class="edit-label">Tags: </label>
+                            <input name="Tags" type="text" id="txtTag" class="edit-input" />
+                        </span>
+                        <textarea name="Post" id="txtEditPost">   
+                    </textarea>
+                        <span class="edit-span">
+                            <input type="submit" id="btnSave" class="edit-save" value="Save" />
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <script>
+        tinymce.init({
+            selector: 'textarea',
+            plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
+            toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
+        });
+    </script>
+</body>
