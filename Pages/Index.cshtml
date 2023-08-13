@@ -18,7 +18,13 @@
                         <h3>@post.Title </h3>
                         <div class="blog-date">@post.Updated.ToShortDateString()</div>
                         <p>
-                             @string.Concat(post.Post.Substring(1,300)," ...")
+                        @{
+                            string text = string.Concat(post.Post.Length > 300 ? post.Post.Substring(1, 300) : post.Post, "...");
+                            text = text.Replace("<p>", "");
+                            text = text.Replace("</p>", "");
+                        }
+                        @Html.Raw(text)
+
                         </p>
                         <div class="btn-blog-section">
                             <a href="/Article/@post.Id" class="btn btn-blog">Read More</a>

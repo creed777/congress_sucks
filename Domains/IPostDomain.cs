@@ -6,5 +6,6 @@ namespace congress_sucks.Domains
     {
         Task<List<BlogPost>> GetGetNewestPostsAsync();
         Task<BlogPost> GetBlogPostAsync(int postId);
+        Task<bool> CreateBlogPostAsync(BlogPost post);
     }
 }

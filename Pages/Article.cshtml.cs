@@ -8,7 +8,7 @@ namespace congress_sucks.Pages
     public class ArticleModel : PageModel
     {
         [Parameter]
-        public int postId {get;set;}
+        public int PostId {get;set;}
         private readonly ILogger<IndexModel> Logger;
         private IPostDomain? PostDomain { get; set; }
         public BlogPost BlogPost { get; set; } = new();
@@ -21,7 +21,7 @@ namespace congress_sucks.Pages
 
         public async void OnGetAsync(int postId)
         {
-            BlogPost = await PostDomain.GetBlogPostAsync(postId).ConfigureAwait(false);
+            BlogPost = await PostDomain!.GetBlogPostAsync(postId).ConfigureAwait(false);
         }
     }
 }

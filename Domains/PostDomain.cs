@@ -21,5 +21,10 @@ namespace congress_sucks.Domains
         {
             return await Repository.GetBlogPostAsync(postId);
         }
+
+        public async Task<bool> CreateBlogPostAsync(BlogPost post)
+        {
+            return await Repository.CreateBlogPostAsync(post);
+        }
     }
 }
