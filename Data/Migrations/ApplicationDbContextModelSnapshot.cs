@@ -47,7 +47,7 @@ namespace congress_sucks.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("BlogPost");
+                    b.ToTable("BlogPost", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
