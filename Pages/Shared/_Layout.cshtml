@@ -13,7 +13,7 @@
 </head>
 <body>
     <header>
-    <div class="container" style="padding-right:25px">
+    <div class="layoutContainer" style="padding-right:25px">
         <nav>
             <div style="float:left">
                 <ul class="main-nav">
@@ -25,6 +25,7 @@
                 </ul>
             </div>
         </nav>
+        <partial name="_LoginPartial" />
     </div>
     @if (ViewBag.View == null)
     {

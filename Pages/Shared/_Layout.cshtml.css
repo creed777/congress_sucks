@@ -46,3 +46,9 @@ button.accept-policy {
   white-space: nowrap;
   line-height: 60px;
 }
+
+.layoutContainer {
+    max-width: 1600px !important;
+    display: flex !important;
+    justify-content: space-between !important;
+}
